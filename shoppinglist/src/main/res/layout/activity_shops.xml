@@ -1,0 +1,9 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:name="org.osito.shoppinglist.presentation.shops.ShopsFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:tag="shops"
+          tools:context="org.osito.shoppinglist.presentation.shops.ShopsActivity"
+          tools:ignore="MergeRootFrame"
+          tools:layout="@layout/fragment_shoppinglist"/>
