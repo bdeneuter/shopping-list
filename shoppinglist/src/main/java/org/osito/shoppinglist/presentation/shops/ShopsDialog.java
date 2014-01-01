@@ -20,6 +20,12 @@ public class ShopsDialog extends DialogFragment implements DialogInterface.OnCli
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
                               .setTitle(R.string.add_shops)
@@ -44,6 +50,13 @@ public class ShopsDialog extends DialogFragment implements DialogInterface.OnCli
 
     private EditText getEditText() {
         return (EditText) getDialog().findViewById(R.id.shops);
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (getDialog() != null && getRetainInstance())
+            getDialog().setDismissMessage(null);
+        super.onDestroyView();
     }
 
 }
