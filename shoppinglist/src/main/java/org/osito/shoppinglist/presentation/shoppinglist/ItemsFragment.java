@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.google.common.collect.Lists;
-
 import org.osito.shoppinglist.R;
 import org.osito.shoppinglist.domain.Item;
 
@@ -52,13 +50,8 @@ public class ItemsFragment extends Fragment implements ItemsView, EnhancedListVi
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
-                Lists.<Item>newArrayList()));
+                newArrayList(items)));
         return view;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
     }
 
     @Override
